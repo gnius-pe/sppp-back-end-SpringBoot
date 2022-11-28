@@ -7,7 +7,7 @@ import java.util.List;
 public interface IServicioSolicitudPPP {
     List<SolicitudPPP> obtenerTodo();
 
-    public SolicitudPPP guardar( SolicitudPPP solicitudPPP);
+    public SolicitudPPP guardar(SolicitudPPP solicitudPPP);
 
     public SolicitudPPP obtenerPorId(long id);
 

@@ -1,12 +1,10 @@
 package com.servicios.sppp.back_end_sppp.modelos;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "solicitud_ppp")
 public class SolicitudPPP implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -14,13 +12,24 @@ public class SolicitudPPP implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String titutlo;
+    private String titulo;
 
     private String asunto;
 
+    private String url;
+
+    @Column(name = "estado_solicitud_ppp")
     boolean estadoSolicitudPPP;
 
     public SolicitudPPP() {
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public long getId() {
@@ -31,12 +40,12 @@ public class SolicitudPPP implements Serializable {
         this.id = id;
     }
 
-    public String getTitutlo() {
-        return titutlo;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setTitutlo(String titutlo) {
-        this.titutlo = titutlo;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getAsunto() {
