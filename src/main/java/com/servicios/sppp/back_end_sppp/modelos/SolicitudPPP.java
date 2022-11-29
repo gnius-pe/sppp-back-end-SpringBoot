@@ -6,8 +6,8 @@ import java.io.Serializable;
 @Entity
 @Table(name = "solicitud_ppp")
 public class SolicitudPPP implements Serializable {
-    private static final long serialVersionUID = 1L;
 
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
