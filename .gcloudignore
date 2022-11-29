@@ -1,3 +1,4 @@
+#son los archivos maven que gcloud no necesita
 .mvn
 target
 mvnw
