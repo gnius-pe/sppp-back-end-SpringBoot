@@ -12,28 +12,28 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/beta")
-public class UsuarioControlador {
+public class AlumnoControlador {
     @Autowired
     UsuarioServicioImpl usuarioServicio;
 
-    @GetMapping("/usuarios")
-    public List<Alumno> obtenerUsuarios(){
+    @GetMapping("/alumnos")
+    public List<Alumno> obtenerAlumnos(){
         return usuarioServicio.obtenerTodo();
     }
 
     @PostMapping("/guardar")
-    public ResponseEntity<Alumno> guardarUsuario(@RequestBody Alumno alumno){
+    public ResponseEntity<Alumno> guardarAlumno(@RequestBody Alumno alumno){
         Alumno nuevoCliente = usuarioServicio.guardar(alumno);
         return new ResponseEntity<>(nuevoCliente, HttpStatus.CREATED);
     }
 
-    @GetMapping("/usuario/{id}")
-    public ResponseEntity<Alumno> obtenerUsuarioId(@PathVariable long id){
+    @GetMapping("/alumno/{id}")
+    public ResponseEntity<Alumno> obtenerAlumnoId(@PathVariable long id){
         Alumno usuarioId = usuarioServicio.obtenerPorId(id);
         return ResponseEntity.ok(usuarioId);
     }
 
-    @PutMapping("/usuario/{id}")
+    @PutMapping("/alumno/{id}")
     public ResponseEntity<Alumno> actualizar(@PathVariable long id, @RequestBody Alumno usuario){
         Alumno usuarioId = usuarioServicio.obtenerPorId(id);
         usuarioId.setNombre(usuario.getNombre());
@@ -47,8 +47,8 @@ public class UsuarioControlador {
         return new ResponseEntity<Alumno>(usuarioActualizado,HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/usuario/{id}")
-    public ResponseEntity<HashMap<String,Boolean>> eliminarUsuario(@PathVariable long id){
+    @DeleteMapping("/alumno/{id}")
+    public ResponseEntity<HashMap<String,Boolean>> eliminarAlumno(@PathVariable long id){
         this.usuarioServicio.eliminar(id);
         HashMap <String,Boolean> estadoUsuarioEliminado = new HashMap<>();
         estadoUsuarioEliminado.put("eliminado",true);
