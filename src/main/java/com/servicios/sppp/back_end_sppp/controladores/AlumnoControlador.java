@@ -16,6 +16,7 @@ public class AlumnoControlador {
     @Autowired
     UsuarioServicioImpl usuarioServicio;
 
+    @CrossOrigin(origins = "http://127.0.0.1:5173")
     @GetMapping("/alumnos")
     public List<Alumno> obtenerAlumnos(){
         return usuarioServicio.obtenerTodo();
@@ -31,6 +32,18 @@ public class AlumnoControlador {
     public ResponseEntity<Alumno> obtenerAlumnoId(@PathVariable long id){
         Alumno usuarioId = usuarioServicio.obtenerPorId(id);
         return ResponseEntity.ok(usuarioId);
+    }
+    @CrossOrigin(origins = "http://127.0.0.1:5173")
+    @GetMapping("/alumno/sesion/{email}/{password}")
+    public ResponseEntity<Alumno> validarAlumno(@PathVariable String email,@PathVariable String password){
+        List<Alumno> alumnos = usuarioServicio.obtenerTodo();
+        Alumno alumnoEncontrado = new Alumno();
+        for(Alumno alumno: alumnos){
+            if(alumno.getEmail().equals(email) && alumno.getPasword().equals(password)){
+                alumnoEncontrado = alumno;
+            }
+        }
+        return ResponseEntity.ok(alumnoEncontrado);
     }
 
     @PutMapping("/alumno/{id}")
