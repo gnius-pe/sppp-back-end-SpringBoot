@@ -22,12 +22,14 @@ public class AlumnoControlador {
         return usuarioServicio.obtenerTodo();
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5173")
     @PostMapping("/guardar")
     public ResponseEntity<Alumno> guardarAlumno(@RequestBody Alumno alumno){
         Alumno nuevoCliente = usuarioServicio.guardar(alumno);
         return new ResponseEntity<>(nuevoCliente, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5173")
     @GetMapping("/alumno/{id}")
     public ResponseEntity<Alumno> obtenerAlumnoId(@PathVariable long id){
         Alumno usuarioId = usuarioServicio.obtenerPorId(id);
@@ -46,6 +48,7 @@ public class AlumnoControlador {
         return ResponseEntity.ok(alumnoEncontrado);
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5173")
     @PutMapping("/alumno/{id}")
     public ResponseEntity<Alumno> actualizar(@PathVariable long id, @RequestBody Alumno usuario){
         Alumno usuarioId = usuarioServicio.obtenerPorId(id);
@@ -60,6 +63,7 @@ public class AlumnoControlador {
         return new ResponseEntity<Alumno>(usuarioActualizado,HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5173")
     @DeleteMapping("/alumno/{id}")
     public ResponseEntity<HashMap<String,Boolean>> eliminarAlumno(@PathVariable long id){
         this.usuarioServicio.eliminar(id);
