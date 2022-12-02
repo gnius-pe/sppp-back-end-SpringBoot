@@ -16,26 +16,26 @@ public class AlumnoControlador {
     @Autowired
     UsuarioServicioImpl usuarioServicio;
 
-    @CrossOrigin(origins = "http://127.0.0.1:5173")
+    @CrossOrigin(origins = {"http://127.0.0.1:5173","https://sysppp.netlify.app/"})
     @GetMapping("/alumnos")
     public List<Alumno> obtenerAlumnos(){
         return usuarioServicio.obtenerTodo();
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5173")
+    @CrossOrigin(origins = {"http://127.0.0.1:5173","https://sysppp.netlify.app/"})
     @PostMapping("/guardar")
     public ResponseEntity<Alumno> guardarAlumno(@RequestBody Alumno alumno){
         Alumno nuevoCliente = usuarioServicio.guardar(alumno);
         return new ResponseEntity<>(nuevoCliente, HttpStatus.CREATED);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5173")
+    @CrossOrigin(origins = {"http://127.0.0.1:5173","https://sysppp.netlify.app/"})
     @GetMapping("/alumno/{id}")
     public ResponseEntity<Alumno> obtenerAlumnoId(@PathVariable long id){
         Alumno usuarioId = usuarioServicio.obtenerPorId(id);
         return ResponseEntity.ok(usuarioId);
     }
-    @CrossOrigin(origins = "http://127.0.0.1:5173")
+    @CrossOrigin(origins = {"http://127.0.0.1:5173","https://sysppp.netlify.app/"})
     @GetMapping("/alumno/sesion/{email}/{password}")
     public ResponseEntity<Alumno> validarAlumno(@PathVariable String email,@PathVariable String password){
         List<Alumno> alumnos = usuarioServicio.obtenerTodo();
@@ -48,7 +48,7 @@ public class AlumnoControlador {
         return ResponseEntity.ok(alumnoEncontrado);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5173")
+    @CrossOrigin(origins = {"http://127.0.0.1:5173","https://sysppp.netlify.app/"})
     @PutMapping("/alumno/{id}")
     public ResponseEntity<Alumno> actualizar(@PathVariable long id, @RequestBody Alumno usuario){
         Alumno usuarioId = usuarioServicio.obtenerPorId(id);
@@ -63,7 +63,7 @@ public class AlumnoControlador {
         return new ResponseEntity<Alumno>(usuarioActualizado,HttpStatus.CREATED);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5173")
+    @CrossOrigin(origins ={"http://127.0.0.1:5173","https://sysppp.netlify.app/"})
     @DeleteMapping("/alumno/{id}")
     public ResponseEntity<HashMap<String,Boolean>> eliminarAlumno(@PathVariable long id){
         this.usuarioServicio.eliminar(id);
