@@ -1,6 +1,6 @@
 # Sistema de Practicas Pre-profesionales
 
-[![SIstema-de-informacion-P-gina-4.png](https://i.postimg.cc/7ZCm5fLW/SIstema-de-informacion-P-gina-4.png)](https://postimg.cc/9DhGSXZd)
+[![SIstema-de-informacion-P-gina-4-1.png](https://i.postimg.cc/nz5LcRS5/SIstema-de-informacion-P-gina-4-1.png)](https://postimg.cc/mzY4mwsN)
 
 ## Parte Back-end del sistema
 1. Exporta API's y es consumido por el front-end
