@@ -20,16 +20,16 @@ public class SolicitudServicioPPPImpl implements  IServicioSolicitudPPP{
 
     @Override
     public SolicitudPPP guardar(SolicitudPPP solicitudPPP) {
-        return null;
+        return solicitudRepositorio.save(solicitudPPP);
     }
 
     @Override
     public SolicitudPPP obtenerPorId(long id) {
-        return null;
+        return solicitudRepositorio.findById(id).orElse(null);
     }
 
     @Override
     public void eliminar(long id) {
-
+        solicitudRepositorio.deleteById(id);
     }
 }
