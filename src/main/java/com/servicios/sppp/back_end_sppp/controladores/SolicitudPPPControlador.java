@@ -28,4 +28,10 @@ public class SolicitudPPPControlador {
         return new ResponseEntity<>(nuevaSolicitudPPP, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins = {"http://127.0.0.1:5173","https://sysppp.netlify.app/"})
+    @GetMapping("/{id}")
+    public ResponseEntity<SolicitudPPP> ontenerSolicitudPorId(@PathVariable long id){
+        SolicitudPPP solicitudPPP = servicioSolicitudPPP.obtenerPorId(id);
+        return ResponseEntity.ok(solicitudPPP);
+    }
 }
