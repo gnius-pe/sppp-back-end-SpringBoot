@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PreDocumentoServicioImpl implements IPreDocumentosPPP{
+public class PreDocumentoServicioImpl implements IMetodosCRUD<PreDocumentosPPP>{
 
     @Autowired
     PreDocumentosPPPRepositorio preDocumentosPPPRepositorio;
@@ -29,7 +29,7 @@ public class PreDocumentoServicioImpl implements IPreDocumentosPPP{
     }
 
     @Override
-    public void aliminar(long id) {
+    public void eliminar(long id) {
         preDocumentosPPPRepositorio.deleteById(id);
     }
 }

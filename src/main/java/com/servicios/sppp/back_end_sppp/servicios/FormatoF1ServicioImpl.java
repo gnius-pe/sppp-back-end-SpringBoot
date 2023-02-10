@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class FormatoF1ServicioImpl implements IFormatoF1 {
+public class FormatoF1ServicioImpl implements IMetodosCRUD<FormatoF1> {
 
     @Autowired
     FormatoF1Repositorio formatoF1Repositorio;
@@ -30,6 +30,6 @@ public class FormatoF1ServicioImpl implements IFormatoF1 {
 
     @Override
     public void eliminar(long id) {
-        formatoF1Repositorio.findById(id);
+        formatoF1Repositorio.deleteById(id);
     }
 }

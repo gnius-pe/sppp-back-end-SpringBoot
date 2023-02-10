@@ -1,7 +1,7 @@
 package com.servicios.sppp.back_end_sppp.servicios;
 
 import com.servicios.sppp.back_end_sppp.modelos.Alumno;
-import com.servicios.sppp.back_end_sppp.repositorios.UsuarioRepositorio;
+import com.servicios.sppp.back_end_sppp.repositorios.AlumnoRepositorio;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -13,7 +13,7 @@ import static org.mockito.Mockito.when;
 class UsuarioServicioImplTest {
 
     @Mock
-    UsuarioRepositorio usuarioRepositorio;
+    AlumnoRepositorio usuarioRepositorio;
 
     @InjectMocks
     UsuarioServicioImpl usuarioServicio;

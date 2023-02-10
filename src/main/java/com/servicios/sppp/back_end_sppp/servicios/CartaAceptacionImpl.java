@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CartaAceptacionImpl implements ICartaAceptacion{
+public class CartaAceptacionImpl implements IMetodosCRUD<CartaACeptacion>{
 
     @Autowired
     CartaAceptacionRepositorio cartaAceptacionRepositorio;

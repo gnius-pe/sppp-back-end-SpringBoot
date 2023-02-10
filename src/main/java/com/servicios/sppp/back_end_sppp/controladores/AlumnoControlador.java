@@ -60,7 +60,7 @@ public class AlumnoControlador {
         usuarioId.setNumeroCelular(usuario.getNumeroCelular());
         usuarioId.setPasword(usuario.getPasword());
         Alumno usuarioActualizado = usuarioServicio.guardar(usuarioId);
-        return new ResponseEntity<Alumno>(usuarioActualizado,HttpStatus.CREATED);
+        return new ResponseEntity<>(usuarioActualizado, HttpStatus.CREATED);
     }
 
     @CrossOrigin(origins ={"http://127.0.0.1:5173","https://sysppp.netlify.app/"})

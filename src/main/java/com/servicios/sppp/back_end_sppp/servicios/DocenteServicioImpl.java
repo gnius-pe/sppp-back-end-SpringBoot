@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class DocenteServicioImpl implements IServicioDocente{
+public class DocenteServicioImpl implements IMetodosCRUD<Docente>{
 
     @Autowired
     DocenteRepositorio docenteRepositorio;
@@ -20,16 +20,16 @@ public class DocenteServicioImpl implements IServicioDocente{
 
     @Override
     public Docente guardar(Docente docente) {
-        return null;
+        return docenteRepositorio.save(docente);
     }
 
     @Override
     public Docente obtenerPorId(long id) {
-        return null;
+        return docenteRepositorio.findById(id).orElse(null);
     }
 
     @Override
     public void eliminar(long id) {
-
+        docenteRepositorio.deleteById(id);
     }
 }

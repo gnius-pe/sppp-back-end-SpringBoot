@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class RevisionPreDocumentoPPPServicioImpl implements IRevisionPreDocumentoPPP{
+public class RevisionPreDocumentoPPPServicioImpl implements IMetodosCRUD<RevisionPreDocumentoPPP>{
 
     @Autowired
     RevisionPreDocumentoPPPRepositorio revisionPreDocumentoPPPRepositorio;

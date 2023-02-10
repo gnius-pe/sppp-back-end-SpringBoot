@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class SolicitudServicioPPPImpl implements  IServicioSolicitudPPP{
+public class SolicitudServicioPPPImpl implements  IMetodosCRUD<SolicitudPPP>{
 
     @Autowired
     SolicitudRepositorio solicitudRepositorio;
